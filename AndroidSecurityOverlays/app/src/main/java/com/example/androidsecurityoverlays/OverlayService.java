@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,6 +53,7 @@ public class OverlayService extends Service {
                 // Aquí puedes definir la acción que se ejecutará al pulsar el botón
                 Toast.makeText(OverlayService.this, "¡Botón presionado!", Toast.LENGTH_SHORT).show();
                 System.out.println("¡Botón presionado!");
+                Log.e("OverlayService", "¡Botón presionado!");
             }
         });
 
@@ -62,6 +64,7 @@ public class OverlayService extends Service {
             public void onClick(View v) {
                 Toast.makeText(OverlayService.this, "Texto tocado!", Toast.LENGTH_SHORT).show();
                 System.out.println("Texto tocado!");
+                Log.e("OverlayService", "Texto tocado!");
             }
         });
     }
@@ -71,9 +74,11 @@ public class OverlayService extends Service {
         if (isOverlayVisible()) {
             Toast.makeText(this, "Overlay está en ejecución", Toast.LENGTH_SHORT).show();
             System.out.println("Overlay está en ejecución");
+            Log.e("OverlayService", "Overlay está en ejecución");
         } else {
             Toast.makeText(this, "Overlay no está visible", Toast.LENGTH_SHORT).show();
             System.out.println("Overlay no está visible");
+            Log.e("OverlayService", "Overlay no está visible");
         }
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -49,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         Intent overlayIntent = new Intent(this, OverlayService.class);
         startService(overlayIntent);
         Toast.makeText(this, "Overlay service started!", Toast.LENGTH_SHORT).show();
+        System.out.println("Overlay service started!");
+        Log.e("MainActivity", "Overlay service started!");
     }
 
 
@@ -58,8 +61,13 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_OVERLAY_PERMISSION) {
             if (Settings.canDrawOverlays(this)) {
                 startOverlayService();
+                Toast.makeText(this, "Permission granted!", Toast.LENGTH_SHORT).show();
+                System.out.println("Permission granted!");
+                Log.e("MainActivity", "Permission granted!");
             } else {
                 Toast.makeText(this, "Permission not granted!", Toast.LENGTH_SHORT).show();
+                System.out.println("Permission not granted!");
+                Log.e("MainActivity", "Permission not granted!");
             }
         }
     }
