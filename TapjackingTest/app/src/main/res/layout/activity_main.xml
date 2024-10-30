@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/vulnerableButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:filterTouchesWhenObscured="true"
+        android:text="Permitir" />
+
+    <Button
+        android:id="@+id/buyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vulnerableButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:filterTouchesWhenObscured="true"
+        android:text="Comprar" />
+
+    <Button
+        android:id="@+id/locationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buyButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:filterTouchesWhenObscured="true"
+        android:text="Activar Localización" />
+
+    <TextView
+        android:id="@+id/locationStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Localización: " />
+
+    <Button
+        android:id="@+id/phishingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:filterTouchesWhenObscured="true"
+        android:text="Aceptar" />
+
+
+    <FrameLayout
+        android:id="@+id/overlayView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/phishingButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="-50dp"
+            android:text="¡Haz clic aquí para ganar un premio!"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+</RelativeLayout>

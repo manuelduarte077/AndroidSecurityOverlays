@@ -14,6 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_OVERLAY_PERMISSION = 100;
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         startService(overlayIntent);
         Toast.makeText(this, "Overlay service started!", Toast.LENGTH_SHORT).show();
         System.out.println("Overlay service started!");
-        Log.e("MainActivity", "Overlay service started!");
+        Log.d("MainActivity", "Overlay service started!");
     }
 
 
@@ -63,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 startOverlayService();
                 Toast.makeText(this, "Permission granted!", Toast.LENGTH_SHORT).show();
                 System.out.println("Permission granted!");
-                Log.e("MainActivity", "Permission granted!");
+                Log.d("MainActivity", "Permission granted!");
             } else {
                 Toast.makeText(this, "Permission not granted!", Toast.LENGTH_SHORT).show();
                 System.out.println("Permission not granted!");
-                Log.e("MainActivity", "Permission not granted!");
+                Log.d("MainActivity", "Permission not granted!");
             }
         }
     }
