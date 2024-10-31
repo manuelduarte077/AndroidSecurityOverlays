@@ -53,10 +53,9 @@ public class OverlayService extends Service {
             @Override
             public void onClick(View v) {
                 // Aquí puedes definir la acción que se ejecutará al pulsar el botón
-                Toast.makeText(OverlayService.this, "¡Botón presionado!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(OverlayService.this, "¡Botón presionado!", Toast.LENGTH_LONG).show();
                 System.out.println("¡Botón presionado!");
                 Log.d("OverlayService", "¡Botón presionado!");
-                Snackbar.make(overlayView, "¡Botón presionado!", Snackbar.LENGTH_SHORT).show();
             }
         });
 
@@ -65,10 +64,9 @@ public class OverlayService extends Service {
         overlayText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(OverlayService.this, "Texto tocado!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(OverlayService.this, "Texto tocado!", Toast.LENGTH_LONG).show();
                 System.out.println("Texto tocado!");
                 Log.d("OverlayService", "Texto tocado!");
-                Snackbar.make(overlayView, "Texto tocado!", Snackbar.LENGTH_SHORT).show();
             }
         });
     }
@@ -76,15 +74,13 @@ public class OverlayService extends Service {
     private void showOverlayStatusMessage() {
         // Verifica si el overlay está visible y muestra un mensaje
         if (isOverlayVisible()) {
-            Toast.makeText(this, "Overlay está en ejecución", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Overlay está en ejecución", Toast.LENGTH_LONG).show();
             System.out.println("Overlay está en ejecución");
             Log.d("OverlayService", "Overlay está en ejecución");
-            Snackbar.make(overlayView, "Overlay está en ejecución", Snackbar.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Overlay no está visible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Overlay no está visible", Toast.LENGTH_LONG).show();
             System.out.println("Overlay no está visible");
             Log.d("OverlayService", "Overlay no está visible");
-            Snackbar.make(overlayView, "Overlay no está visible", Snackbar.LENGTH_SHORT).show();
         }
     }
 
